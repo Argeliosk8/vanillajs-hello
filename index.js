@@ -5,13 +5,8 @@ let action = ['ate','peed','crushed','broke'];
 let what = ['my homework', 'the keys', 'the car'];
 let when = ['before the class','right on time','when I finished','during my lunch','while I was praying'];
 
-function onLoad(){
-    let selectedWho = who[Math.floor(Math.random() * who.length)];
-    let selectedAction = action[Math.floor(Math.random() * action.length)];
-    let selectedWhat = what[Math.floor(Math.random() * what.length)];
-    let selectedWhen = when[Math.floor(Math.random() * when.length)];
-    return `${selectedWho} ${selectedAction} ${selectedWhat} ${selectedWhen}`
-}
+const excuseGenerator = (array) => array[Math.floor(Math.random() * array.length)];
+const onLoad = () => `${excuseGenerator(who)} ${excuseGenerator(action)} ${excuseGenerator(what)} ${excuseGenerator(when)}`;
 
 document.getElementById("excuse").innerHTML = onLoad()
 
